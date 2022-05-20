@@ -44,7 +44,7 @@
                     <label for="cpfPessoa">CPF</label>
 
                     <input type="text" class="form-control {{ $errors->has('cpfPessoa') ? 'is-invalid' :''  }} "
-                        name="cpfPessoa" id="cpfPessoa" placeholder="Digite o CPF">
+                        name="cpfPessoa" id="cpf" placeholder="Digite o CPF">
 
 
 
@@ -247,6 +247,7 @@
                     </div>
                     <script src="/jquery.min.js"></script>
                     <script src="/js/viacep/viacep.js"></script>
+                    <script src="/js/validacpf/validacpf.js"></script>
                     <script>
 
 
