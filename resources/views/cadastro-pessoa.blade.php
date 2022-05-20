@@ -43,9 +43,7 @@
 
                     <label for="cpfPessoa">CPF</label>
 
-                    <input type="text" class="form-control {{ $errors->has('cpfPessoa') ? 'is-invalid' :''  }} "
-                        name="cpfPessoa" id="cpf" placeholder="Digite o CPF">
-
+                    <input type="text" class="form-control" name="cpfPessoa" id="cpf" onkeyup="cpfCheck(this)" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Digite o CPF"> <span id="cpfResponse"></span>
 
 
                     @if($errors->has('cpfPessoa'))
