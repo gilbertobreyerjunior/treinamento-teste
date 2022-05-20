@@ -71,6 +71,14 @@ class CadastroPessoa extends Controller
    {
 
 
+        $pe = Pessoa::find($id);
+
+        if(isset($pe))
+        {
+            return view('editar-pessoa', compact('pe'));
+
+
+        }
 
 
 
