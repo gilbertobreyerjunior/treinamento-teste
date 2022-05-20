@@ -19,7 +19,7 @@
 
                 <div class="col-12 col-sm-6">
 
-                    <label for="nomeProduto">Nome</label>
+                    <label for="nomePessoa">Nome</label>
 
                     <input type="text" class="form-control {{ $errors->has('nomePessoa') ? 'is-invalid' :''  }} "
                         name="nomePessoa" id="nomePessoa" placeholder="Digite o Nome">
@@ -240,7 +240,7 @@
 
                             <button type="reset" class="btn btn-secondary btn-sm"> Limpar</button>
 
-                            <a href="/" class="btn btn-sm btn-danger role="button">Voltar</a>
+                            <a href="/" class="btn btn-sm btn-danger role=" button">Voltar</a>
 
                         </div>
 
