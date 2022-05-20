@@ -1,44 +1,34 @@
 @extends('layout.app')
-
 @section('title', 'Lista de Pessoas')
-
-
-
 @section('content')
 
 
 <div class="card-border">
     <div class="card-body">
 
-       <h5 class="card-title">Lista Pessoas</h5>
+        <h5 class="card-title">Lista Pessoas</h5>
+
+        <form action="" method="GET" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" name="buscar" placeholder="Buscar pessoa" /> <span
+                    class="input-group-btn">
+                    <button type="submit" class="btn btn-primary btn-sm"> Buscar
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        @if(count($pes) > 0)
 
 
-       <form action="" method="GET" role="search">
-        {{ csrf_field() }}
-        <div class="input-group">
-            <input type="text" class="form-control" name="buscar"
-                placeholder="Buscar produto" /> <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary btn-sm"> Buscar
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </span>
-        </div>
-    </form>
+        <table class="table table-ordered table-hover">
 
 
+            <thead>
 
-
-
-
-@if(count($pes) > 0)
-
-
-       <table class="table table-ordered table-hover">
-
-
-               <thead>
-
-                  <tr>
+                <tr>
 
                     <th>Código</th>
                     <th>Nome</th>
@@ -49,35 +39,32 @@
                     <th>Bairro</th>
                     <th>Logradouro</th>
 
-                  </tr>
+                </tr>
 
-               </thead>
+            </thead>
 
-               <tbody>
+            <tbody>
 
-                   @foreach($pes as $pe)
-                      <tr>
+                @foreach($pes as $pe)
+                <tr>
+                    <td>{{$pe->id}}</td>
+                    <td>{{$pe->nome}}</td>
+                    <td>{{$pe->cpf}}</td>
+                    <td>{{$pe->cep}}</td>
+                    <td>{{$pe->uf}}</td>
+                    <td>{{$pe->cidade}}</td>
+                    <td>{{$pe->bairro}}</td>
+                    <td>{{$pe->logradouro}}</td>
 
+                    <td>
 
-                            <td>{{$pe->id}}</td>
-                            <td>{{$pe->nome}}</td>
-                            <td>{{$pe->cpf}}</td>
-                            <td>{{$pe->cep}}</td>
-                            <td>{{$pe->uf}}</td>
-                            <td>{{$pe->cidade}}</td>
-                            <td>{{$pe->bairro}}</td>
-                            <td>{{$pe->logradouro}}</td>
+                        <a href="/pessoa/editar/{{$pe->id}}" class="btn btn-sm btn-primary">Editar</a>
 
-                            <td>
+                    </td>
 
-
-                              <a href="#" class="btn btn-sm btn-primary">Editar</a>
-
-                              {{--  <a href="#" class="btn btn-sm btn-danger">Remover</a>  --}}
-                            </td>
-                      </tr>
-                   @endforeach
-               </tbody>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
         @endif
     </div>
@@ -85,8 +72,8 @@
     <div class="card-footer">
 
         <a href="/pessoa/cadastro" class="btn btn-sm btn-primary" role="button">Nova Pessoa</a>
-        <a href="/" class="btn btn-sm btn-danger role="button">Voltar</a>
-</div>
+        <a href="/" class="btn btn-sm btn-danger role=" button">Voltar</a>
+    </div>
 
-
-@endsection <!-- Encerra a seção -->
+    @endsection
+    <!-- Encerra a seção -->
