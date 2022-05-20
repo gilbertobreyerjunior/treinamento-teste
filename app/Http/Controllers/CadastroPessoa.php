@@ -66,28 +66,66 @@ class CadastroPessoa extends Controller
    }
 
 
+public function edit($id)
+{
 
-   public function edit($id)
-   {
+    $pe = Pessoa::find($id);
+
+    if (isset($pe)) {
+    return view('editar-pessoa', compact('pe'));
 
 
-        $pe = Pessoa::find($id);
-
-        if(isset($pe))
-        {
-            return view('editar-pessoa', compact('pe'));
-
+    }
+    return redirect('/');
 
         }
 
 
 
-   }
-
 
    public function update(Request $request, $id)
    {
+    // $mensagens = [
+    //     'required' => 'O campo :attribute não pode estar em branco',
 
+
+    //     'nomeProduto.min' => 'O nome produto deve conter no mínimo tres caracteres',
+
+    //     'quantidadeProduto.min' => 'O campo quatidade produto deve ter 1 numeros',
+
+    //     'patrimonioProduto.min' => 'O campo patrimônio não pode ficar em branco'
+    // ];
+
+
+
+    // $request->validate([
+
+
+    //     'nomeProduto' => 'required |min:3|max:30',
+    //     'quantidadeProduto' => 'required |min:1',
+    //     'patrimonioProduto' => 'required |min:1'
+
+
+
+    // ], $mensagens);
+
+
+   $pe = Pessoa::find($id);
+
+   if (isset($pe)) {
+
+        $pe->nome = $request->input('nomePessoa');
+        $pe->cpf = $request->input('cpfPessoa');
+        $pe->telefone = $request->input('telefonePessoa');
+        $pe->cep = $request->input('cepPessoa');
+        $pe->uf = $request->input('uf');
+        $pe->cidade = $request->input('cidade');
+        $pe->bairro = $request->input('bairro');
+        $pe->logradouro = $request->input('logradouro');
+
+       $pe->save();
+   }
+   return redirect('/pessoa/visualiza');
 
 
 
