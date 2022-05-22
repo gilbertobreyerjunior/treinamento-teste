@@ -8,7 +8,7 @@
 
         <h5 class="card-title">Lista Pessoas</h5>
 
-        <form action="" method="GET" role="search">
+        <form method="GET" role="search">
             {{ csrf_field() }}
             <div class="input-group">
                 <input type="text" class="form-control" name="buscar" placeholder="Buscar pessoa" /> <span
@@ -38,6 +38,7 @@
                     <th>Cidade</th>
                     <th>Bairro</th>
                     <th>Logradouro</th>
+                    <th>Ações</th>
 
                 </tr>
 
@@ -59,6 +60,7 @@
                     <td>
 
                         <a href="/pessoa/editar/{{$pe->id}}" class="btn btn-sm btn-primary">Editar</a>
+                        <button class="btn-modal btn btn-sm btn-danger"  data-id="{{$pe->id}}">Excluir</button>
 
                     </td>
 
@@ -75,5 +77,58 @@
         <a href="/" class="btn btn-sm btn-danger role=" button">Voltar</a>
     </div>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Excluir</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal Excluir -->
+          <form id="deleteForm" method="POST" action="{{ route('deletar.pessoa', $pe->id) }}">
+
+            @csrf
+            @method('DELETE')
+
+            <input type="hidden" name="pessoa_id" id="pessoa_id" value"">
+
+          <div class="modal-body">
+          Deseja realmente excluir o registro?
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+          </div>
+        </form>
+
+        </div>
+      </div>
+    </div>
+
     @endsection
     <!-- Encerra a seção -->
+
+
+    @section('scripts')
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $(document).on('click', '.btn-modal', function(e) {
+                $('#exampleModal').modal('show');
+
+                var id = $(this).data('id');
+                $('#pessoa_id').val(id);
+
+            })
+        });
+
+
+    </script>
+
+    @endsection

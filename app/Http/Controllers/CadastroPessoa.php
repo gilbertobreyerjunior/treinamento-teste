@@ -12,7 +12,14 @@ class CadastroPessoa extends Controller
     public function index() {
 
 
-            $pes = Pessoa::all();
+
+        $buscar = request('buscar');
+        if (trim($buscar) == '')
+            $buscar = '%';
+
+        $pes = Pessoa::where('nome', 'like', '%' . $buscar . '%')->get();
+
+            // $pes = Pessoa::all();
 
         return view('lista-pessoas', compact('pes'));
 
@@ -127,11 +134,21 @@ public function edit($id)
    }
    return redirect('/pessoa/visualiza');
 
+   }
 
 
+   public function destroy($id)
+   {
 
+        $pe = Pessoa::find($id);
+        $pe->delete();
+        return redirect('/pessoa/visualiza');
 
    }
+
+
+
+
 
 
 }

@@ -16,6 +16,7 @@ Route::prefix('/pessoa')->group(function(){
     Route::post('/cadastrar', 'CadastroPessoa@store')->name('cadastrar.pessoa');
     Route::get('/editar/{id}', 'CadastroPessoa@edit')->name('edit.pessoa');
     Route::post('/editado/{id}', 'CadastroPessoa@update')->name('editado.pessoa');
+    Route::delete('/excluir/{id}', 'CadastroPessoa@destroy')->name('deletar.pessoa');
 
 });
 
