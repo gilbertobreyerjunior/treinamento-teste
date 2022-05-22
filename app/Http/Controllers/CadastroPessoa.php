@@ -13,13 +13,13 @@ class CadastroPessoa extends Controller
 
 
 
-        $buscar = request('buscar');
-        if (trim($buscar) == '')
-            $buscar = '%';
+        // $buscar = request('buscar');
+        // if (trim($buscar) == '')
+        //     $buscar = '%';
 
-        $pes = Pessoa::where('nome', 'like', '%' . $buscar . '%')->get();
+        // $pes = Pessoa::where('nome', 'like', '%' . $buscar . '%')->get();
 
-            // $pes = Pessoa::all();
+            $pes = Pessoa::paginate(2);
 
         return view('lista-pessoas', compact('pes'));
 

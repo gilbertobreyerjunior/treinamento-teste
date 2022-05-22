@@ -68,6 +68,10 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="justify-content-center align-items-center row">
+        {{$pes->links()}}
+
+    </div>
         @endif
     </div>
 
