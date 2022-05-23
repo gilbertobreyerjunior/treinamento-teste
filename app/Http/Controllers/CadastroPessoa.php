@@ -19,7 +19,8 @@ class CadastroPessoa extends Controller
 
         // $pes = Pessoa::where('nome', 'like', '%' . $buscar . '%')->get();
 
-            $pes = Pessoa::paginate(2);
+        //    $pes = Pessoa::paginate(2);
+        $pes = Pessoa::all();
 
         return view('lista-pessoas', compact('pes'));
 
@@ -141,6 +142,7 @@ public function edit($id)
    {
 
         $pe = Pessoa::find($id);
+
         $pe->delete();
         return redirect('/pessoa/visualiza');
 

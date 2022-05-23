@@ -68,10 +68,10 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="justify-content-center align-items-center row">
+        {{--  <div class="justify-content-center align-items-center row">
         {{$pes->links()}}
 
-    </div>
+    </div>  --}}
         @endif
     </div>
 
@@ -92,7 +92,7 @@
           </div>
 
           <!-- Modal Excluir -->
-          <form id="deleteForm" method="POST" action="{{ route('deletar.pessoa', $pe->id) }}">
+          <form id="deleteForm" method="POST"  action="">
 
             @csrf
             @method('DELETE')
@@ -127,6 +127,11 @@
                 $('#exampleModal').modal('show');
 
                 var id = $(this).data('id');
+
+                var url = '{{ url('/pessoa/excluir') }}/' + id;
+
+                $('#deleteForm').attr('action', url);
+
                 $('#pessoa_id').val(id);
 
             })
