@@ -18,7 +18,8 @@ Route::prefix('/pessoa')->group(function(){
     Route::post('/editado/{id}', 'CadastroPessoa@update')->name('editado.pessoa');
     Route::delete('/excluir/{id}', 'CadastroPessoa@destroy');
 
-
+    // Pesquisar
+    Route::any('pesquisar','CadastroPessoa@pesquisar');
 
 });
 

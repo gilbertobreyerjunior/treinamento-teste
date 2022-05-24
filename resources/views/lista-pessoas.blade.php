@@ -8,17 +8,27 @@
 
         <h5 class="card-title">Lista Pessoas</h5>
 
-        <form method="GET" role="search">
-            {{ csrf_field() }}
-            <div class="input-group">
-                <input type="text" class="form-control" name="buscar" placeholder="Buscar pessoa" /> <span
-                    class="input-group-btn">
-                    <button type="submit" class="btn btn-primary btn-sm"> Buscar
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
+        <form class="navbar-form navbar-left" role="search" action="{!! url('pessoa/pesquisar') !!}" method="post" style="margin-left: 25%;margin-bottom: 3%;">
+
+            <h4>Pesquisar</h4>
+            <div class="row">
+           <td>
+              {!! csrf_field() !!}
+              <input type="text" name="search" class="form-control" placeholder="Pesquisar" style="width: 200px;">
+              <button class="btn btn-sm btn-success">Ir</button>
+
+
+            </td>
             </div>
+
+
+
+        </div>
         </form>
+
+        {{--  ##############  --}}
+
+
 
         @if(count($pes) > 0)
 
@@ -100,7 +110,7 @@
             <input type="hidden" name="pessoa_id" id="pessoa_id" value"">
 
           <div class="modal-body">
-          Deseja realmente excluir o registro?
+          Deseja realmente excluir ?
           </div>
 
           <div class="modal-footer">

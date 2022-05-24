@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Input;
 use App\Pessoa;
 
 class CadastroPessoa extends Controller
@@ -12,15 +13,8 @@ class CadastroPessoa extends Controller
     public function index() {
 
 
-
-        // $buscar = request('buscar');
-        // if (trim($buscar) == '')
-        //     $buscar = '%';
-
-        // $pes = Pessoa::where('nome', 'like', '%' . $buscar . '%')->get();
-
-        //    $pes = Pessoa::paginate(2);
-        $pes = Pessoa::all();
+           $pes = Pessoa::paginate(2);
+        // $pes = Pessoa::all();
 
         return view('lista-pessoas', compact('pes'));
 
@@ -142,13 +136,27 @@ public function edit($id)
    {
 
         $pe = Pessoa::find($id);
-
         $pe->delete();
         return redirect('/pessoa/visualiza');
 
    }
 
 
+
+   public function Pesquisar(Request $request)
+   {
+    $search = $request->input('search');
+
+    if ($search != '') {
+        $pes = Pessoa::orWhere('nome','like',"%$search%")
+                        ->orWhere('cpf','like',"%$search%")
+                        ->orWhere('cep','like',"%$search%")
+                        ->orWhere('uf','like',"%$search%")
+                        ->paginate(2);
+        }
+
+                        return view('lista-pessoas', compact('pes'));
+   }
 
 
 
