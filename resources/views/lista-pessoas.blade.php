@@ -15,9 +15,20 @@
            <td>
               {!! csrf_field() !!}
               <input type="text" name="search" class="form-control" placeholder="Pesquisar" style="width: 200px;">
-              <button class="btn btn-sm btn-success">Ir</button>
 
 
+            <div class="col-md-4">
+                <input type="date" name="data_inicio" class="form-control" placeholder="Data início">
+
+            </div>
+
+            <div class="col-md-4">
+
+                <input type="date" name="data_fim" class="form-control" placeholder="Data fim">
+
+            </div>
+
+              <button class="btn btn-sm btn-primary">Filtrar</button>
             </td>
             </div>
 
@@ -26,11 +37,7 @@
         </div>
         </form>
 
-        {{--  ##############  --}}
-
-
-
-        @if(count($pes) > 0)
+         @if($pes->count() > 0)
 
 
         <table class="table table-ordered table-hover">
