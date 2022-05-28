@@ -55,6 +55,7 @@
                     <th>Cidade</th>
                     <th>Bairro</th>
                     <th>Logradouro</th>
+                    <th>Cadastrado em: </th>
                     <th>Ações</th>
 
                 </tr>
@@ -73,6 +74,7 @@
                     <td>{{$pe->cidade}}</td>
                     <td>{{$pe->bairro}}</td>
                     <td>{{$pe->logradouro}}</td>
+                    <td>{{$pe->created_at}}</td>
 
                     <td>
 
