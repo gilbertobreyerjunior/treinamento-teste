@@ -17,6 +17,7 @@ class Pessoa extends Model
         'cidade',
         'bairro',
         'logradouro',
+        'created_at',
 
 
     ];
