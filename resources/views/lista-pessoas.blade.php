@@ -74,7 +74,7 @@
                     <td>{{$pe->cidade}}</td>
                     <td>{{$pe->bairro}}</td>
                     <td>{{$pe->logradouro}}</td>
-                    <td>{{$pe->created_at}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($pe->created_at))}}</td>
 
                     <td>
 
