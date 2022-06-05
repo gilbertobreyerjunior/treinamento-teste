@@ -24,7 +24,7 @@ class PessoaSeeder extends Seeder
             'cep' => '22060970',
             'uf' => 'RJ',
             'cidade' => 'Rio de Janeiro',
-            'bairro' => 'Copa Cabana',
+            'bairro' => 'CopaCabana',
             'logradouro' => 'Avenida Atlantica',
 
 
@@ -38,12 +38,25 @@ class PessoaSeeder extends Seeder
             'cep' => '22060970',
             'uf' => 'RJ',
             'cidade' => 'Rio de Janeiro',
-            'bairro' => 'Copa Cabana',
-            'logradouro' => 'Avenida Atlantica',
+            'bairro' => 'Botafogo',
+            'logradouro' => 'Avenida',
 
 
          ]);
 
+         DB::table('pessoas')->insert([
+
+            'nome' => 'Omario Silva',
+            'cpf' => '183214107063',
+            'telefone' => '5599090432',
+            'cep' => '22060970',
+            'uf' => 'RJ',
+            'cidade' => 'Rio de Janeiro',
+            'bairro' => 'CopaCabana',
+            'logradouro' => 'Avenida Atlantica',
+
+
+         ]);
 
 
 
