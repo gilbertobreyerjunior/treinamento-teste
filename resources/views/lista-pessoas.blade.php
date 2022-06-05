@@ -51,7 +51,7 @@
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>CEP</th>
-                    <th>Uf</th>
+                    <th>UF</th>
                     <th>Cidade</th>
                     <th>Bairro</th>
                     <th>Logradouro</th>
@@ -87,10 +87,10 @@
                 @endforeach
             </tbody>
         </table>
-        {{--  <div class="justify-content-center align-items-center row">
+        <div class="justify-content-center align-items-center row">
         {{$pes->links()}}
 
-    </div>  --}}
+    </div>
         @endif
     </div>
 
