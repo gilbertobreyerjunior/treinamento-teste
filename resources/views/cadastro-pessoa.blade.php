@@ -2,20 +2,16 @@
 
 @section('title', 'Cadastro de Pessoas')
 
-
 @section('content')
 
 <div class="card border">
 
     <div class="card-body">
 
-
         <form action="{{ route('cadastrar.pessoa') }}" method="POST">
 
             @csrf
             <div class="row">
-
-
 
                 <div class="col-12 col-sm-6">
 
@@ -35,7 +31,6 @@
 
                     </div>
                     @endif
-
 
                 </div>
 
@@ -57,17 +52,11 @@
                     </div>
                     @endif
 
-
-
                 </div>
-
-
-
 
             </div>
             {{--  fecha row  --}}
             <div class="form-group">
-
 
                 <label for="telefonePessoa">Telefone</label>
 
@@ -79,12 +68,9 @@
                             name="telefonePessoa" id="telefonePessoa" placeholder="Digite o Telefone">
                     </div>
 
-
                     @if($errors->has('telefonePessoa'))
 
-
                     <div class="invalid-feedback">
-
 
                         {{ $errors ->first('telefonePessoa') }}
 
@@ -92,8 +78,6 @@
                     @endif
 
                 </div>
-
-
 
                 <div class="form-group">
 
@@ -108,20 +92,14 @@
 
                     <div class="invalid-feedback">
 
-
                         {{ $errors ->first('cepPessoa') }}
 
                     </div>
                     @endif
 
-
                 </div>
 
-
-
-
                 <div class="form-group">
-
 
                     <label for="uf">Estado</label>
 
@@ -131,7 +109,6 @@
                             <input type="text" class="form-control {{ $errors->has('uf') ? 'is-invalid' :''  }} "
                                 name="uf" id="uf" placeholder="UF">
                         </div>
-
 
                         @if($errors->has('uf'))
 
@@ -147,7 +124,6 @@
                     </div>
 
                     <div class="form-group">
-
 
                         <label for="cidade">Cidade</label>
 
@@ -186,7 +162,6 @@
                                         name="bairro" id="bairro" placeholder="Bairro">
                                 </div>
 
-
                                 @if($errors->has('bairro'))
 
 
@@ -199,8 +174,6 @@
                                 @endif
 
                             </div>
-
-
 
                             <div class="form-group">
 
@@ -215,7 +188,6 @@
                                             name="logradouro" id="logradouro" placeholder="Logradouro">
                                     </div>
 
-
                                     @if($errors->has('logradouro'))
 
 
@@ -229,10 +201,7 @@
 
                                 </div>
 
-
-
                             </div>
-
 
                             <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
 
@@ -246,15 +215,6 @@
                     <script src="/jquery.min.js"></script>
                     <script src="/js/viacep/viacep.js"></script>
                     <script src="/js/validacpf/validacpf.js"></script>
-                    <script>
-
-
-
-
-
-                    </script>
-
-
 
                     @endsection
                     <!-- Encerra a seção -->
