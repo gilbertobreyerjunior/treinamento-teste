@@ -117,14 +117,13 @@ public function edit($id)
    if (isset($pe)) {
 
         $pe->nome = $request->input('nomePessoa');
-        $pe->cpf = $request->input('cpfPessoa');
+        $pe->cpf = preg_replace('/[^0-9]/', '', $request->input('cpfPessoa'));
         $pe->telefone = $request->input('telefonePessoa');
         $pe->cep = $request->input('cepPessoa');
         $pe->uf = $request->input('uf');
         $pe->cidade = $request->input('cidade');
         $pe->bairro = $request->input('bairro');
         $pe->logradouro = $request->input('logradouro');
-
        $pe->save();
    }
    return redirect('/pessoa/visualiza');
