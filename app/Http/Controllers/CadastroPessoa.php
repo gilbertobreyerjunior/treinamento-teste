@@ -53,7 +53,7 @@ class CadastroPessoa extends Controller
 
         $pe = new Pessoa();
         $pe->nome = $request->input('nomePessoa');
-        $pe->cpf = $request->input('cpfPessoa');
+        $pe->cpf = preg_replace('/[^0-9]/', '', $request->input('cpfPessoa'));
         $pe->telefone = $request->input('telefonePessoa');
         $pe->cep = $request->input('cepPessoa');
         $pe->uf = $request->input('uf');
