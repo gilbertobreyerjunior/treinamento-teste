@@ -15,10 +15,10 @@
 
                 <div class="col-12 col-sm-6">
 
-                    <label for="nomePessoa">Nome</label>
+                    <label for="nomePessoa">Email</label>
 
                     <input type="text" class="form-control {{ $errors->has('nomePessoa') ? 'is-invalid' :''  }} "
-                        name="nomePessoa" id="nomePessoa" placeholder="Digite o Nome">
+                        name="nomePessoa" id="nomePessoa" placeholder="Digite o email">
 
                     @if($errors->has('nomePessoa'))
 
