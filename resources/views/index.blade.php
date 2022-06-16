@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Menu de contato com o cliente</h5>
                     <p class="card=text">
-                        Aqui você irá poder enviar e-mail e sms ao cliente
+                        Aqui você irá poder enviar e-mail e sms ao cliente.
                     </p>
                     <div class="row">
                         <div class="col-6 col-sm-6">
