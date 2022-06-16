@@ -15,17 +15,17 @@
 
                 <div class="col-12 col-sm-6">
 
-                    <label for="nomePessoa">Email</label>
+                    <label for="telefonePessoa">Telefone</label>
 
-                    <input type="text" class="form-control {{ $errors->has('nomePessoa') ? 'is-invalid' :''  }} "
-                        name="nomePessoa" id="nomePessoa" placeholder="Digite o email">
+                    <input type="text" class="form-control {{ $errors->has('telefonePessoa') ? 'is-invalid' :''  }} "
+                        name="telefonePessoa" id="telefonePessoa" placeholder="Digite o telefone">
 
-                    @if($errors->has('nomePessoa'))
+                    @if($errors->has('telefonePessoa'))
 
                     <div class="invalid-feedback">
 
 
-                        {{ $errors ->first('nomePessoa') }}
+                        {{ $errors ->first('telefonePessoa') }}
 
                     </div>
                     @endif
