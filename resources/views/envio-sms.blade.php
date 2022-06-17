@@ -8,7 +8,7 @@
 
     <div class="card-body">
 
-        <form action="{{ route('cadastrar.pessoa') }}" method="POST">
+        <form action="{{ route('sms-send') }}" method="GET">
 
             @csrf
             <div class="row">
@@ -30,14 +30,17 @@
                     </div>
                     @endif
 
-                    <label for="smsPessoa">Texto</label>
-                    <textarea class="form-control {{ $errors->has('smsPessoa') ? 'is-invalid' :''  }}" id="smsPessoa" rows="3"></textarea>
+                    <label for="textoPessoa">Texto</label>
 
-                        @if($errors->has('smsPessoa'))
+                        <textarea class="form-control {{ $errors->has('textoPessoa') ? 'is-invalid' :''  }} "
+                            name="textoPessoa" id="textoPessoa" placeholder="Digite a mensagem"></textarea>
+
+                        @if($errors->has('textoPessoa'))
 
                         <div class="invalid-feedback">
 
-                            {{ $errors ->first('smsPessoa') }}
+
+                            {{ $errors ->first('textoPessoa') }}
 
                         </div>
                         @endif
