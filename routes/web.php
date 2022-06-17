@@ -21,5 +21,9 @@ Route::prefix('/pessoa')->group(function(){
     // Pesquisar
     Route::any('pesquisar','CadastroPessoa@pesquisar');
 
+
+    Route::get('/sms', 'SMSController@send')->name('sms');
+    Route::get('/send-sms', 'SMSController@smssend')->name('sms-send');
+
 });
 
