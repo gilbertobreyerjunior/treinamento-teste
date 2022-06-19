@@ -38,7 +38,7 @@
                     </p>
                     <div class="row">
                         <div class="col-6 col-sm-6">
-                            <a href="#" class="btn btn-primary">Envio de SMS</a>
+                            <a href="{{ route('sms.pessoa') }}" class="btn btn-primary">Envio de SMS</a>
                         </div>
                         <div class="col-6 col-sm-6">
                             <a href="#" class="btn btn-primary">Envio de e-mail</a>
