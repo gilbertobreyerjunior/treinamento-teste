@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', function () {
     return view('index');
 });
@@ -21,9 +22,12 @@ Route::prefix('/pessoa')->group(function(){
     // Pesquisar
     Route::any('pesquisar','CadastroPessoa@pesquisar');
 
-
+    // SMS
     Route::get('/sms', 'SMSController@send')->name('sms.pessoa');
     Route::get('/send-sms', 'SMSController@smssend')->name('sms-send');
 
 });
+
+
+
 
