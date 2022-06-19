@@ -22,7 +22,7 @@ Route::prefix('/pessoa')->group(function(){
     Route::any('pesquisar','CadastroPessoa@pesquisar');
 
 
-    Route::get('/sms', 'SMSController@send')->name('sms');
+    Route::get('/sms', 'SMSController@send')->name('sms.pessoa');
     Route::get('/send-sms', 'SMSController@smssend')->name('sms-send');
 
 });
