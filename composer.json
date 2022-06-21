@@ -14,7 +14,11 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+<<<<<<< HEAD
         "twilio/sdk": "^6.37"
+=======
+        "nesbot/carbon": "^2.58"
+>>>>>>> feature-mail
     },
     "require-dev": {
         "facade/ignition": "^2.0",

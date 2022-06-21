@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Menu de Pessoas</h5>
                     <p class="card=text">
-                        Aqui você irá poder cadastrar e exibir os seus produtos cadastrados
+                        Aqui você irá poder cadastrar e visualizar pessoas cadastradas
                     </p>
                     <div class="row">
                         <div class="col-6 col-sm-6">
@@ -34,15 +34,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Menu de contato com o cliente</h5>
                     <p class="card=text">
-                        Aqui você irá poder enviar e-mail e sms ao cliente.
+                        Aqui você irá poder enviar sms ao cliente assim podendo entrar em contato.
                     </p>
                     <div class="row">
                         <div class="col-6 col-sm-6">
                             <a href="{{ route('sms.pessoa') }}" class="btn btn-primary">Envio de SMS</a>
                         </div>
-                        <div class="col-6 col-sm-6">
-                            <a href="#" class="btn btn-primary">Envio de e-mail</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
