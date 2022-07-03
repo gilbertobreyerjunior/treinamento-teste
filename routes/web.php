@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
+Auth::routes();
 
-
-Route::get('/', function () {
+Route::middleware(['auth'])->get('/', function () {
     return view('index');
 });
 
-
 // Grupo para as rotas de pessoa
 
-Route::prefix('/pessoa')->group(function(){
+Route::middleware(['auth'])->prefix('/pessoa')->group(function(){
     Route::get('/visualiza', 'CadastroPessoa@index')->name('visualiza.pessoa');
     Route::get('/cadastro', 'CadastroPessoa@create')->name('cadastro.pessoa');
     Route::post('/cadastrar', 'CadastroPessoa@store')->name('cadastrar.pessoa');
@@ -28,6 +27,6 @@ Route::prefix('/pessoa')->group(function(){
 
 });
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
