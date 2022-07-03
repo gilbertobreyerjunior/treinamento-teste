@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Unit\\PessoaTest::test_check_if_pessoa_columns_is_correct":3},"times":{"Tests\\Unit\\ExampleTest::testBasicTest":0.285,"Tests\\Feature\\ExampleTest::testBasicTest":0.262,"Tests\\Unit\\PessoaTest::test_check_if_pessoa_columns_is_correct":0.132}}

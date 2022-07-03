@@ -27,3 +27,7 @@ Route::prefix('/pessoa')->group(function(){
     Route::get('/send-sms', 'SMSController@smssend')->name('sms-send');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
